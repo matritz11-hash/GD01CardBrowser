@@ -1,0 +1,25 @@
+[
+  {
+    "id": "GD01-001",
+    "name": "RX-78-2 Gundam",
+    "type": "Mobile Suit",
+    "rarity": "R",
+    "number": 1,
+    "imageUrl": null,
+    "text": "Le mobile suit emblématique."
+  },
+  {
+    "id": "GD01-002",
+    "name": "Amuro Ray",
+    "type": "Pilote",
+    "rarity": "U",
+    "number": 2
+  },
+  {
+    "id": "GD01-003",
+    "name": "Beam Saber",
+    "type": "Option",
+    "rarity": "C",
+    "number": 3
+  }
+]
