@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -18,8 +19,19 @@ jobs:
         distribution: temurin
         java-version: 17
 
+    # Installe l'Android SDK + accepte les licences
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v3
+
+    # Installe Gradle 8.7 (compatible AGP 8.4.x) et active le cache
+    - name: Set up Gradle 8.7
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: 8.7
+
+    # Lance la build avec Gradle (pas ./gradlew)
     - name: Build Debug APK
-      run: ./gradlew assembleDebug
+      run: gradle :app:assembleDebug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
